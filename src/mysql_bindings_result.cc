@@ -139,7 +139,7 @@ Local<Value> MysqlResult::GetFieldValue(MYSQL_FIELD field, char* field_value, un
                 
                 // Great. We can use this constructor function to allocate new Dates:
                 const int argc = 1;
-                Local<Value> argv[argc] = { String::Concat(V8STR(field_value), V8STR(" GMT")) };
+                Local<Value> argv[argc] = { String::Concat(V8STR(field_value), V8STR(" GMT+0800 (CST)")) };
                 
                 // Now we have our constructor, and our constructor args. Let's create the Date:
                 js_field = dateConstructor->NewInstance(argc, argv);
@@ -156,7 +156,7 @@ Local<Value> MysqlResult::GetFieldValue(MYSQL_FIELD field, char* field_value, un
                 
                 // Great. We can use this constructor function to allocate new Dates:
                 const int argc = 1;
-                Local<Value> argv[argc] = { String::Concat(V8STR(field_value), V8STR(" GMT")) };
+                Local<Value> argv[argc] = { String::Concat(V8STR(field_value), V8STR(" GMT+0800 (CST)")) };
                 
                 // Now we have our constructor, and our constructor args. Let's create the Date:
                 js_field = dateConstructor->NewInstance(argc, argv);
